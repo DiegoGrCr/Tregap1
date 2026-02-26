@@ -1,0 +1,420 @@
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1e40af", // Blue as the primary brand color
+                        "secondary": "#ec1313", // Red for CTAs and offers
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#111827",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            .no-scrollbar::-webkit-scrollbar {
+                display: none;
+            }
+            .no-scrollbar {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 lg:px-20 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2">
+<div class="relative flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-secondary" style="font-variation-settings: 'FILL' 1">shopping_cart</span>
+<div class="absolute inset-0 border-2 border-primary rounded-md opacity-20"></div>
+</div>
+<div class="flex flex-col leading-none cursor-pointer" onclick="window.location.href='#'">
+<h2 class="text-primary dark:text-blue-400 text-2xl font-black leading-none tracking-tighter italic">TREGA</h2>
+<span class="text-secondary text-[10px] font-bold uppercase tracking-widest">Supermercado</span>
+</div>
+</div>
+<div class="hidden md:flex items-center gap-4">
+<button class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">menu</span>
+<span class="font-semibold text-sm">Categorías</span>
+</button>
+</div>
+<label class="flex flex-col min-w-[300px] h-10">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full overflow-hidden">
+<div class="text-slate-400 flex bg-slate-100 dark:bg-slate-800 items-center justify-center pl-4">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-0 h-full placeholder:text-slate-500 px-4 text-sm font-normal" placeholder="Buscar pan dulce, salado, repostería..."/>
+</div>
+</label>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center gap-6">
+<a class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Ofertas</a>
+<a class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Soporte</a>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-primary hover:text-white transition-all relative">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="absolute -top-1 -right-1 bg-secondary text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">2</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<button class="flex items-center gap-2 px-3 rounded-lg h-10 bg-primary text-white text-sm font-bold transition-transform active:scale-95">
+<span class="material-symbols-outlined">person</span>
+<span class="hidden sm:inline">Ingresar</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col items-center">
+<div class="w-full max-w-[1440px] px-6 lg:px-20">
+<div class="flex border-b border-slate-200 dark:border-slate-800 gap-8 overflow-x-auto no-scrollbar py-2">
+<a class="whitespace-nowrap flex flex-col items-center border-b-2 border-transparent text-slate-500 hover:text-primary pb-2 pt-2 px-1 transition-colors" href="#">
+<span class="text-sm font-bold">Ofertas de hoy</span>
+</a>
+<a class="whitespace-nowrap flex flex-col items-center border-b-2 border-transparent text-slate-500 hover:text-primary pb-2 pt-2 px-1 transition-colors" href="#">
+<span class="text-sm font-bold">Frutas y Verduras</span>
+</a>
+<a class="whitespace-nowrap flex flex-col items-center border-b-2 border-transparent text-slate-500 hover:text-primary pb-2 pt-2 px-1 transition-colors" href="#">
+<span class="text-sm font-bold">Lácteos y Huevos</span>
+</a>
+<a class="whitespace-nowrap flex flex-col items-center border-b-2 border-transparent text-slate-500 hover:text-primary pb-2 pt-2 px-1 transition-colors" href="#">
+<span class="text-sm font-bold">Carnes y Mariscos</span>
+</a>
+<a class="whitespace-nowrap flex flex-col items-center border-b-2 border-primary text-primary pb-2 pt-2 px-1" href="#">
+<span class="text-sm font-bold">Panadería</span>
+</a>
+<a class="whitespace-nowrap flex flex-col items-center border-b-2 border-transparent text-slate-500 hover:text-primary pb-2 pt-2 px-1 transition-colors" href="#">
+<span class="text-sm font-bold">Congelados</span>
+</a>
+</div>
+<div class="flex flex-col lg:flex-row gap-10 py-8">
+<aside class="w-full lg:w-64 flex-shrink-0 flex flex-col gap-8">
+<div>
+<h3 class="font-extrabold text-lg mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">filter_list</span>
+                                    Filtros
+                                </h3>
+<div class="space-y-6">
+<div class="flex flex-col gap-3">
+<h4 class="font-bold text-sm text-slate-900 dark:text-white uppercase tracking-wider">Tipo</h4>
+<div class="flex flex-col gap-2">
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="rounded border-slate-300 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors">Pan Dulce</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="rounded border-slate-300 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors">Pan de Caja</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="rounded border-slate-300 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors">Bollería</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="rounded border-slate-300 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors">Repostería</span>
+</label>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-bold text-sm text-slate-900 dark:text-white uppercase tracking-wider">Disponibilidad</h4>
+<label class="flex items-center gap-2 cursor-pointer group">
+<div class="relative inline-flex items-center">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-slate-200 peer-focus:outline-none rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</div>
+<span class="text-sm text-slate-600 dark:text-slate-400">Horneado hoy</span>
+</label>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-bold text-sm text-slate-900 dark:text-white uppercase tracking-wider">Precio</h4>
+<div class="flex flex-col gap-4">
+<input class="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-primary" max="100" min="0" type="range"/>
+<div class="flex items-center justify-between">
+<span class="text-xs font-semibold px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded">$0</span>
+<span class="text-xs font-semibold px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded">$100+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<div class="flex-1">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between mb-8 gap-4">
+<div>
+<nav class="flex text-xs text-slate-400 gap-1 mb-1">
+<a class="hover:text-primary" href="#">Inicio</a>
+<span>/</span>
+<span class="text-slate-900 dark:text-slate-200 font-medium">Panadería</span>
+</nav>
+<h1 class="text-3xl font-black tracking-tight">Categoría Panadería</h1>
+<p class="text-slate-500 text-sm mt-1">Encuentra pan artesanal y repostería recién horneada todos los días.</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-sm text-slate-500 whitespace-nowrap">Ordenar por:</span>
+<select class="form-select text-sm border-slate-200 dark:border-slate-800 dark:bg-slate-900 rounded-lg focus:ring-primary">
+<option>Más populares</option>
+<option>Menor precio</option>
+<option>Mayor precio</option>
+<option>Nuevos productos</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
+<div class="flex flex-col bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+<div class="aspect-[4/3] bg-slate-50 dark:bg-slate-800 flex items-center justify-center p-4 relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbtC-X5heTrUBCKLpd_1Di3gYl-azVj44GHqN34AUDUU8L7szbYbR5khusYzwLO6SEAFvRgKcV0tbQygdoyP6pvszaL-LHe2nxP40uFohBVir2CRoXS0v0-KkK2K8cQgvkrnr05yUU-OR1V-0ByYVi37QMBPx__Vygp92LVdKJ-vLNeRpKQolJcZNnduY7pQp_nPCXpKAl_2sepmJqampAk0LHGjR8hafIF7Gsfkw8HkjqN3ZBasid-XpaDxwjRSpcVOxUHMRU6zKg"/>
+<span class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded">ARTESANAL</span>
+</div>
+<div class="p-5 flex flex-col gap-3">
+<div>
+<p class="text-slate-500 text-xs font-semibold uppercase tracking-wider">Pan Salado</p>
+<h3 class="font-bold text-lg text-slate-900 dark:text-white leading-tight">Pan de Masa Madre</h3>
+<p class="text-slate-400 text-sm">Hogaza 800g</p>
+</div>
+<div class="flex items-end justify-between mt-2">
+<div class="flex flex-col">
+<span class="text-slate-900 dark:text-white font-black text-xl">$3.25</span>
+</div>
+<button class="bg-primary hover:bg-blue-800 text-white px-4 py-2 rounded-lg transition-all active:scale-90 flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+<span class="text-sm font-bold">Agregar</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+<div class="aspect-[4/3] bg-slate-50 dark:bg-slate-800 flex items-center justify-center p-4 relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzI33FaC8kPVhDncfTIXTZC8f9yg1oILDAU0reSTHjbFqYl6jjCFl3AfzMpWN75kRVRGrfEKikC4VS-ZNFc97VfTi6gnPBT1QdybhmdY18BgyoO824jIQg0WRIpaaANxs6PlreNn4CTDsyJsA-an1Wzu_j3PzkIBpKaF0nw992rik8THMvCN1x5N8XyuWnKr4eA9vcovPqCzrWRUnlDnfblPGybf6lc5q_eteDYNuDWoCnYFJq-b-oQ9bE3_vXjfTL7ZtZsG5eojZC"/>
+<span class="absolute top-3 left-3 bg-secondary text-white text-[10px] font-bold px-2 py-1 rounded">20% DESC</span>
+</div>
+<div class="p-5 flex flex-col gap-3">
+<div>
+<p class="text-slate-500 text-xs font-semibold uppercase tracking-wider">Pan Dulce</p>
+<h3 class="font-bold text-lg text-slate-900 dark:text-white leading-tight">Conchas de Vainilla</h3>
+<p class="text-slate-400 text-sm">Paquete 4 pzas</p>
+</div>
+<div class="flex items-end justify-between mt-2">
+<div class="flex flex-col">
+<span class="text-secondary font-black text-xl">$1.20</span>
+<span class="text-slate-400 text-sm line-through">$1.50</span>
+</div>
+<button class="bg-primary hover:bg-blue-800 text-white px-4 py-2 rounded-lg transition-all active:scale-90 flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+<span class="text-sm font-bold">Agregar</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition-shadow group relative">
+<div class="aspect-[4/3] bg-slate-50 dark:bg-slate-800 flex items-center justify-center p-4 relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdf7G6ymmubTruBigbENKWJeB6GQZqHAW2pZNmxlpnDnbJcGVwg0g6Vx3U9a6H9dwnP7KbZZzCf1F4p3V6U6jimb1fd6Abz3UB5JnrrdusIaGdRx8XL5ZmlBmlijdu1UgYS2fk0RlYC5JWaUInTAq__y5XwC7kabVHT1yH7W5dXXXqwEdCCdQaXkS0UJOEqRf951BzYjsJqg4VZ0JVBnkyFqoYEFqy8Ta19n6CygWEcrQ0rtmz4zISa2SMt9u2oDmaWOEQ4nC7CUml"/>
+<span class="absolute top-3 left-3 bg-blue-500 text-white text-[10px] font-bold px-2 py-1 rounded">HORNEADO HOY</span>
+</div>
+<div class="p-5 flex flex-col gap-3">
+<div>
+<p class="text-slate-500 text-xs font-semibold uppercase tracking-wider">Bollería</p>
+<h3 class="font-bold text-lg text-slate-900 dark:text-white leading-tight">Baguette Artesanal</h3>
+<p class="text-slate-400 text-sm">Grande 350g</p>
+</div>
+<div class="flex items-end justify-between mt-2">
+<div class="flex flex-col">
+<span class="text-slate-900 dark:text-white font-black text-xl">$0.95</span>
+</div>
+<button class="bg-primary hover:bg-blue-800 text-white px-4 py-2 rounded-lg transition-all active:scale-90 flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+<span class="text-sm font-bold">Agregar</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+<div class="aspect-[4/3] bg-slate-50 dark:bg-slate-800 flex items-center justify-center p-4 relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADWHNmsubWDR9BhwqLmNwWU4bhJsksJxX8PniwI6QxhNVpSFm_EnIgmcR3dohe2AV4KnuQa18yWhx1tuF700lw5gEScv34Tsthlqbx6rIavpuk2GC8fExkQY_roekfj0YZaRLq2Jb-utYudh_1WT7KBSNm4KFFGWNvW1lR4knlc2VJs9mpeAqQcYdRVFM2YCWh2yrjj-JPP_NKZjeX3GGsEnCkCvneov0zY0_0L3s7leP0JJSdyyeXAYN6R_UJNd-IR_T_dKqx44NP"/>
+<span class="absolute top-3 left-3 bg-secondary text-white text-[10px] font-bold px-2 py-1 rounded">OFERTA 2X1</span>
+</div>
+<div class="p-5 flex flex-col gap-3">
+<div>
+<p class="text-slate-500 text-xs font-semibold uppercase tracking-wider">Repostería</p>
+<h3 class="font-bold text-lg text-slate-900 dark:text-white leading-tight">Donas Glaseadas</h3>
+<p class="text-slate-400 text-sm">Dúo Pack</p>
+</div>
+<div class="flex items-end justify-between mt-2">
+<div class="flex flex-col">
+<span class="text-secondary font-black text-xl">$1.99</span>
+<span class="text-slate-400 text-sm line-through">$3.98</span>
+</div>
+<button class="bg-primary hover:bg-blue-800 text-white px-4 py-2 rounded-lg transition-all active:scale-90 flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+<span class="text-sm font-bold">Agregar</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+<div class="aspect-[4/3] bg-slate-50 dark:bg-slate-800 flex items-center justify-center p-4 relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtanePgv38QG1HqN05XYslF6FCAWS21zUG2aZ1QQjxRdx_iqqG5PUMdsiXGTKshaI5UPiF9Bj_unflGmskCOjb3c2MWI4GaPNPVy9NSsA_2JcawNoDx30b8ewRXDzwEsCNFBopk6Dk3mN0mIX6L_zcDL-Kg2NZfdW5H0WRCF8Ve3BYiMgr9Op97YDC0T6nsvmfMyV8VQTF7_tC1UrzhpijHjJGniSUUwB7ROyD5-bSoKuwcu53cyKdHrU44aV2CXZo6oUvb3rp9BZO"/>
+</div>
+<div class="p-5 flex flex-col gap-3">
+<div>
+<p class="text-slate-500 text-xs font-semibold uppercase tracking-wider">Pan de Caja</p>
+<h3 class="font-bold text-lg text-slate-900 dark:text-white leading-tight">Pan de Caja Integral</h3>
+<p class="text-slate-400 text-sm">Tajado 650g</p>
+</div>
+<div class="flex items-end justify-between mt-2">
+<div class="flex flex-col">
+<span class="text-slate-900 dark:text-white font-black text-xl">$2.45</span>
+</div>
+<button class="bg-primary hover:bg-blue-800 text-white px-4 py-2 rounded-lg transition-all active:scale-90 flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+<span class="text-sm font-bold">Agregar</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+<div class="aspect-[4/3] bg-slate-50 dark:bg-slate-800 flex items-center justify-center p-4 relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxsm3r69B1ngDUTfGAn51dPZPKCFSWoZTb-7jRLGbfT_cWB_8MRq2Ut0xR782XGz6QLwQo752XJvjuz1nU04dptaoLIj5Svl3BD_nUEdmV6uKhCiC_P8UO3WAoKdRl6GCRKCy72C01R31UecROg1s82853rk537E0MmYp4Tfnh2LWdxSnPz2emPeuQJV1M-GysQCMQceFnEucTUcuHpBJxkm0VkHtgIPU-dghtWZwMZQOOawdIljlCwUrPLsgLpectZ0o3qyo53ILz"/>
+<span class="absolute top-3 left-3 bg-secondary text-white text-[10px] font-bold px-2 py-1 rounded">15% DESC</span>
+</div>
+<div class="p-5 flex flex-col gap-3">
+<div>
+<p class="text-slate-500 text-xs font-semibold uppercase tracking-wider">Bollería</p>
+<h3 class="font-bold text-lg text-slate-900 dark:text-white leading-tight">Croissant Mantequilla</h3>
+<p class="text-slate-400 text-sm">Pieza Individual</p>
+</div>
+<div class="flex items-end justify-between mt-2">
+<div class="flex flex-col">
+<span class="text-secondary font-black text-xl">$0.85</span>
+<span class="text-slate-400 text-sm line-through">$1.00</span>
+</div>
+<button class="bg-primary hover:bg-blue-800 text-white px-4 py-2 rounded-lg transition-all active:scale-90 flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+<span class="text-sm font-bold">Agregar</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="flex justify-center mt-12">
+<nav class="flex items-center gap-1">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 text-slate-500 hover:bg-slate-50">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-white font-bold">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 text-slate-500 hover:bg-slate-50 font-bold">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 text-slate-500 hover:bg-slate-50 font-bold">3</button>
+<span class="px-2 text-slate-400">...</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 text-slate-500 hover:bg-slate-50">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</nav>
+</div>
+</div>
+</div>
+<div class="py-12">
+<div class="bg-slate-100 dark:bg-slate-800 rounded-3xl p-8 lg:p-12 flex flex-col lg:flex-row items-center justify-between gap-8 border-l-8 border-primary">
+<div class="max-w-xl text-center lg:text-left">
+<h3 class="text-3xl font-black mb-2">Únete a nuestro boletín semanal</h3>
+<p class="text-slate-600 dark:text-slate-400 text-lg">Suscríbete para recibir descuentos exclusivos, planes de comidas semanales y las actualizaciones más frescas directamente en tu bandeja de entrada.</p>
+</div>
+<div class="flex w-full lg:w-auto flex-col sm:flex-row gap-3">
+<input class="px-6 py-4 rounded-xl border-none ring-1 ring-slate-200 dark:ring-slate-700 dark:bg-slate-900 focus:ring-2 focus:ring-primary w-full sm:w-80" placeholder="Tu correo electrónico" type="email"/>
+<button class="bg-primary hover:bg-blue-800 text-white px-8 py-4 rounded-xl font-bold transition-all whitespace-nowrap">Suscribirse ahora</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 pt-16 pb-8">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-2">
+<div class="relative flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-secondary" style="font-variation-settings: 'FILL' 1">shopping_cart</span>
+</div>
+<div class="flex flex-col leading-none">
+<h2 class="text-primary dark:text-blue-400 text-2xl font-black leading-none tracking-tighter italic">TREGA</h2>
+<span class="text-secondary text-[10px] font-bold uppercase tracking-widest">Supermercado</span>
+</div>
+</div>
+<p class="text-slate-500 text-sm leading-relaxed">
+                            Tu supermercado digital de confianza. Seleccionamos solo los productos orgánicos más frescos y básicos de primera calidad para tu familia.
+                        </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition-colors" href="#"><span class="material-symbols-outlined text-lg">share</span></a>
+<a class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition-colors" href="#"><span class="material-symbols-outlined text-lg">public</span></a>
+<a class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition-colors" href="#"><span class="material-symbols-outlined text-lg">call</span></a>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white mb-6">Enlaces Rápidos</h4>
+<ul class="flex flex-col gap-4 text-slate-500 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Sobre TREGA</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Sucursales</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Rastrear Pedido</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Carreras</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white mb-6">Soporte</h4>
+<ul class="flex flex-col gap-4 text-slate-500 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Centro de Ayuda</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Opciones de Entrega</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Cambios y Devoluciones</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contáctanos</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white mb-6">Aplicaciones</h4>
+<p class="text-slate-500 text-sm mb-4">Descarga nuestra app para una experiencia de compra más rápida.</p>
+<div class="flex flex-col gap-3">
+<button class="bg-black text-white flex items-center gap-3 px-4 py-2 rounded-lg text-left">
+<span class="material-symbols-outlined text-3xl">phone_iphone</span>
+<div>
+<p class="text-[10px] uppercase font-bold opacity-60 leading-none">Descarga en la</p>
+<p class="text-sm font-bold leading-none">App Store</p>
+</div>
+</button>
+<button class="bg-black text-white flex items-center gap-3 px-4 py-2 rounded-lg text-left">
+<span class="material-symbols-outlined text-3xl">ad_units</span>
+<div>
+<p class="text-[10px] uppercase font-bold opacity-60 leading-none">Consíguelo en</p>
+<p class="text-sm font-bold leading-none">Google Play</p>
+</div>
+</button>
+</div>
+</div>
+</div>
+<div class="max-w-[1440px] mx-auto px-6 lg:px-20 mt-16 pt-8 border-t border-slate-100 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-slate-400 text-xs">© 2024 TREGA Supermercado. Todos los derechos reservados.</p>
+<div class="flex gap-6 text-slate-400 text-xs">
+<a class="hover:text-slate-900 transition-colors" href="#">Política de Privacidad</a>
+<a class="hover:text-slate-900 transition-colors" href="#">Términos de Servicio</a>
+</div>
+</div>
+</footer>
+</div>
+</div>
+
+```</body></html>

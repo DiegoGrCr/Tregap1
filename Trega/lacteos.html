@@ -1,0 +1,392 @@
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1e40af", // Blue
+                        "secondary": "#ec1313", // Red
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#111827",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            .no-scrollbar::-webkit-scrollbar {
+                display: none;
+            }
+            .no-scrollbar {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 lg:px-20 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2">
+<div class="relative flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-secondary" style="font-variation-settings: 'FILL' 1">shopping_cart</span>
+</div>
+<div class="flex flex-col leading-none">
+<h1 class="text-primary dark:text-blue-400 text-2xl font-black leading-none tracking-tighter italic">TREGA</h1>
+<span class="text-secondary text-[10px] font-bold uppercase tracking-widest">Supermercado</span>
+</div>
+</div>
+<div class="hidden md:flex items-center gap-4">
+<button class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-primary">menu</span>
+<span class="font-semibold text-sm text-primary">Categorías</span>
+</button>
+</div>
+<label class="flex flex-col min-w-[300px] h-10">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full overflow-hidden">
+<div class="text-slate-400 flex bg-slate-100 dark:bg-slate-800 items-center justify-center pl-4">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-0 h-full placeholder:text-slate-500 px-4 text-sm font-normal" placeholder="Buscar leche, quesos, huevos..."/>
+</div>
+</label>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center gap-6">
+<a class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Ofertas</a>
+<a class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Soporte</a>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-primary hover:text-white transition-all relative">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="absolute -top-1 -right-1 bg-secondary text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">2</span>
+</button>
+<button class="flex items-center gap-2 px-3 rounded-lg h-10 bg-primary text-white text-sm font-bold transition-transform active:scale-95">
+<span class="material-symbols-outlined">person</span>
+<span class="hidden sm:inline">Mi Cuenta</span>
+</button>
+</div>
+</div>
+</header>
+<nav class="bg-primary text-white px-6 lg:px-20 py-2">
+<div class="flex items-center gap-4 text-xs font-medium">
+<a class="opacity-75 hover:opacity-100" href="#">Inicio</a>
+<span class="material-symbols-outlined text-[10px]">chevron_right</span>
+<span class="font-bold">Lácteos y Huevos</span>
+</div>
+</nav>
+<main class="flex-1 flex justify-center py-8">
+<div class="w-full max-w-[1440px] px-6 lg:px-20 flex flex-col lg:flex-row gap-8">
+<aside class="hidden lg:flex flex-col w-64 shrink-0 gap-8">
+<div>
+<h3 class="text-lg font-extrabold mb-4">Tipo</h3>
+<div class="flex flex-col gap-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox rounded text-primary focus:ring-primary h-5 w-5 border-slate-300" type="checkbox"/>
+<span class="text-sm font-medium group-hover:text-primary transition-colors">Leche</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox rounded text-primary focus:ring-primary h-5 w-5 border-slate-300" type="checkbox"/>
+<span class="text-sm font-medium group-hover:text-primary transition-colors">Quesos</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox rounded text-primary focus:ring-primary h-5 w-5 border-slate-300" type="checkbox"/>
+<span class="text-sm font-medium group-hover:text-primary transition-colors">Yogur</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox rounded text-primary focus:ring-primary h-5 w-5 border-slate-300" type="checkbox"/>
+<span class="text-sm font-medium group-hover:text-primary transition-colors">Huevos</span>
+</label>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-extrabold mb-4">Marca</h3>
+<div class="flex flex-col gap-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox rounded text-primary focus:ring-primary h-5 w-5 border-slate-300" type="checkbox"/>
+<span class="text-sm font-medium group-hover:text-primary transition-colors">Lala</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox rounded text-primary focus:ring-primary h-5 w-5 border-slate-300" type="checkbox"/>
+<span class="text-sm font-medium group-hover:text-primary transition-colors">Alpura</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox rounded text-primary focus:ring-primary h-5 w-5 border-slate-300" type="checkbox"/>
+<span class="text-sm font-medium group-hover:text-primary transition-colors">Santa Clara</span>
+</label>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-extrabold mb-4">Precio</h3>
+<div class="flex flex-col gap-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-radio text-primary focus:ring-primary h-5 w-5 border-slate-300" name="price" type="radio"/>
+<span class="text-sm font-medium">Hasta $40</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-radio text-primary focus:ring-primary h-5 w-5 border-slate-300" name="price" type="radio"/>
+<span class="text-sm font-medium">$40 - $100</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-radio text-primary focus:ring-primary h-5 w-5 border-slate-300" name="price" type="radio"/>
+<span class="text-sm font-medium">Más de $100</span>
+</label>
+</div>
+</div>
+<div class="mt-4 p-6 bg-blue-50 dark:bg-slate-800 rounded-2xl border border-blue-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-primary mb-2">inventory_2</span>
+<h4 class="font-bold text-sm mb-1 text-primary">Cadena de Frío</h4>
+<p class="text-xs text-slate-500">Garantizamos la frescura de tus lácteos con transporte refrigerado.</p>
+</div>
+</aside>
+<div class="flex-1">
+<div class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
+<div>
+<h2 class="text-3xl font-black tracking-tight">Lácteos y Huevos</h2>
+<p class="text-slate-500 text-sm mt-1">Frescura y nutrición diaria para tu familia.</p>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-sm text-slate-500 font-medium">Ordenar por:</span>
+<select class="form-select text-sm font-bold border-slate-200 rounded-lg focus:ring-primary focus:border-primary py-2 px-4 bg-white">
+<option>Más Populares</option>
+<option>Menor Precio</option>
+<option>Mayor Precio</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<div class="group flex flex-col bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all relative">
+<div class="aspect-square bg-slate-50 dark:bg-slate-800 flex items-center justify-center p-4 overflow-hidden">
+<img class="max-h-full max-w-full object-contain transition-transform group-hover:scale-110 duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzAaQJphhKQCbEkg8ItpIv90x3KnuAap2G39YJbkJmDwF8OGreS54c_A_NJTm3OOyrRbrX2qNpB4YBPdMkTU7MlZPC-H16aisidjEnSzCnxcAxxKXPdYOtkktLEq-ghk3p6MAfSwzBajcJX8xboFdJWjx3KWn1ytIPHBEH6LzUE8AvD6kVW5BWuVx6gsfGZcLwveyKpc-NIS4SqDdBKe8S6ZUitAWDg4eFUIQBks9IJntZcxTH2BD5s9zxo2qGJev7gN5xfah2wUVs"/>
+</div>
+<div class="p-5 flex flex-col gap-2">
+<p class="text-primary text-[10px] font-bold uppercase tracking-widest">Leche</p>
+<h3 class="font-bold text-md text-slate-900 dark:text-white leading-tight h-10 line-clamp-2">Leche Entera 1L</h3>
+<p class="text-slate-400 text-xs">Tetra Pak</p>
+<div class="flex items-center justify-between mt-2">
+<div class="flex flex-col">
+<span class="text-slate-900 dark:text-white font-black text-xl">$24.50</span>
+</div>
+<button class="bg-primary hover:bg-blue-800 text-white p-2.5 rounded-lg transition-all active:scale-90 flex items-center gap-2">
+<span class="material-symbols-outlined text-xl">add_shopping_cart</span>
+<span class="text-xs font-bold pr-1">Agregar</span>
+</button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all relative">
+<span class="absolute top-4 left-4 bg-secondary text-white text-[10px] font-black uppercase px-2 py-1 rounded z-10 shadow-sm">Oferta</span>
+<div class="aspect-square bg-slate-50 dark:bg-slate-800 flex items-center justify-center p-4 overflow-hidden">
+<img class="max-h-full max-w-full object-contain transition-transform group-hover:scale-110 duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAvHQ4xwl3tZVAlkkQK2l5x6gqMpe8s3HvywoCjVacj-c458-6tqNUmfq0A_x8Wl2oTzWZ0iAfZC-o75Ywq3P1S3T8EYM0W5mLSwm0MActHC2cVytGIpOQEwMEdIIG6JNNHFNcS6_Ch3hOH9Il9wiBijkozc_8XgifuYvFGo9yq3B_zOwnwJ1TP7dxRxcm8r7XraVQvE_dtdIZwARh6Azm_KSISRLKNIg-erVIXh48OCNDlnvvwHRUmNShlZUW2ehJlSNnOVfOWazY"/>
+</div>
+<div class="p-5 flex flex-col gap-2">
+<p class="text-primary text-[10px] font-bold uppercase tracking-widest">Quesos</p>
+<h3 class="font-bold text-md text-slate-900 dark:text-white leading-tight h-10 line-clamp-2">Queso Panela Tradicional</h3>
+<p class="text-slate-400 text-xs">Pieza 400g</p>
+<div class="flex items-center justify-between mt-2">
+<div class="flex flex-col">
+<span class="text-secondary font-black text-xl">$68.00</span>
+<span class="text-slate-400 text-sm line-through">$85.00</span>
+</div>
+<button class="bg-primary hover:bg-blue-800 text-white p-2.5 rounded-lg transition-all active:scale-90 flex items-center gap-2">
+<span class="material-symbols-outlined text-xl">add_shopping_cart</span>
+<span class="text-xs font-bold pr-1">Agregar</span>
+</button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all relative">
+<div class="aspect-square bg-slate-50 dark:bg-slate-800 flex items-center justify-center p-4 overflow-hidden">
+<img class="max-h-full max-w-full object-contain transition-transform group-hover:scale-110 duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaO5hc0TtM9jEQG_r86InAun78Q3mpd7mVjBsBXV9QFXNbsYB0xYoIFz6fI-MsdXRI_iA3jM5Hj0V4ifofQVKaLZWVnL-65BRpkOYK56nabkpMqC5BxzrqBcA3s_hl-wOZ1UTEJlemqgF95nDVXDkOM-eWcysHejBL5KhhvpC0DadrrAcakEI8TF0Tn07QEWsdf34NIRaq6QBkyAiLLcLTGm4sWfOIhSLx_Mcf9hlsuiyBR5qG23p7Km0mYXUfpSyP4hKIclmKGIeW"/>
+</div>
+<div class="p-5 flex flex-col gap-2">
+<p class="text-primary text-[10px] font-bold uppercase tracking-widest">Yogur</p>
+<h3 class="font-bold text-md text-slate-900 dark:text-white leading-tight h-10 line-clamp-2">Yogur Griego Natural</h3>
+<p class="text-slate-400 text-xs">Envase 900g</p>
+<div class="flex items-center justify-between mt-2">
+<div class="flex flex-col">
+<span class="text-slate-900 dark:text-white font-black text-xl">$92.00</span>
+</div>
+<button class="bg-primary hover:bg-blue-800 text-white p-2.5 rounded-lg transition-all active:scale-90 flex items-center gap-2">
+<span class="material-symbols-outlined text-xl">add_shopping_cart</span>
+<span class="text-xs font-bold pr-1">Agregar</span>
+</button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all relative">
+<div class="aspect-square bg-slate-50 dark:bg-slate-800 flex items-center justify-center p-4 overflow-hidden">
+<img class="max-h-full max-w-full object-contain transition-transform group-hover:scale-110 duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMbSsgHA2JyV83AYH2MUBaLy3JajRP3OgCVZ1EG8Q1ZqnrHSwWhn_QBcfGFN3yiIMHWU8O0RVtPJqrm2m7zpls0h77bwwJKJOfRiOf9tPbYvBb3F8wtPM0o__RCOZXcJhHQAkkDsJLQRl2DIH0GFHE77vjieertnloAdZJdmW5opgcjqYmZKqjwFh_gz-bdYy0sUDUgELROy8_cHCjUorNOMA0cZPbFoUaLJcvEdV9952S6tFLqQgUAHnU1iqCQVjwNDWNpio2C7PI"/>
+</div>
+<div class="p-5 flex flex-col gap-2">
+<p class="text-primary text-[10px] font-bold uppercase tracking-widest">Huevos</p>
+<h3 class="font-bold text-md text-slate-900 dark:text-white leading-tight h-10 line-clamp-2">Docena de Huevos Blancos</h3>
+<p class="text-slate-400 text-xs">Paquete 12 piezas</p>
+<div class="flex items-center justify-between mt-2">
+<div class="flex flex-col">
+<span class="text-slate-900 dark:text-white font-black text-xl">$38.50</span>
+</div>
+<button class="bg-primary hover:bg-blue-800 text-white p-2.5 rounded-lg transition-all active:scale-90 flex items-center gap-2">
+<span class="material-symbols-outlined text-xl">add_shopping_cart</span>
+<span class="text-xs font-bold pr-1">Agregar</span>
+</button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all relative">
+<span class="absolute top-4 left-4 bg-secondary text-white text-[10px] font-black uppercase px-2 py-1 rounded z-10 shadow-sm">Oferta</span>
+<div class="aspect-square bg-slate-50 dark:bg-slate-800 flex items-center justify-center p-4 overflow-hidden">
+<img class="max-h-full max-w-full object-contain transition-transform group-hover:scale-110 duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNPzwm4LWAiSTSBNkHTya1V-TjRUn3QNo6s6_B__Uxo-LCi0JuVNGpg257rRjTlxuLrYKn0Vyl7O2vY1B6nDs9usUeTNl2VUBcMpWRUSMy3G13-xHnUkNVFh8ooJDa-Rf5MIh3iEK4gVb15gqpRUXhc63Ghi4j_Wv89mbtAbuvp_SPj7M6SRmfYwGgiFpDskDqquZ_ctGsss0gWtazBfqPVokOeil3xhL_7fiR8-dqO1tqRg0BEGbNdL879LKvJnxLVgI0edqVTzMO"/>
+</div>
+<div class="p-5 flex flex-col gap-2">
+<p class="text-primary text-[10px] font-bold uppercase tracking-widest">Lácteos</p>
+<h3 class="font-bold text-md text-slate-900 dark:text-white leading-tight h-10 line-clamp-2">Mantequilla Sin Sal</h3>
+<p class="text-slate-400 text-xs">Barra 90g</p>
+<div class="flex items-center justify-between mt-2">
+<div class="flex flex-col">
+<span class="text-secondary font-black text-xl">$18.90</span>
+<span class="text-slate-400 text-sm line-through">$22.00</span>
+</div>
+<button class="bg-primary hover:bg-blue-800 text-white p-2.5 rounded-lg transition-all active:scale-90 flex items-center gap-2">
+<span class="material-symbols-outlined text-xl">add_shopping_cart</span>
+<span class="text-xs font-bold pr-1">Agregar</span>
+</button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all relative">
+<div class="aspect-square bg-slate-50 dark:bg-slate-800 flex items-center justify-center p-4 overflow-hidden">
+<img class="max-h-full max-w-full object-contain transition-transform group-hover:scale-110 duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNPzwm4LWAiSTSBNkHTya1V-TjRUn3QNo6s6_B__Uxo-LCi0JuVNGpg257rRjTlxuLrYKn0Vyl7O2vY1B6nDs9usUeTNl2VUBcMpWRUSMy3G13-xHnUkNVFh8ooJDa-Rf5MIh3iEK4gVb15gqpRUXhc63Ghi4j_Wv89mbtAbuvp_SPj7M6SRmfYwGgiFpDskDqquZ_ctGsss0gWtazBfqPVokOeil3xhL_7fiR8-dqO1tqRg0BEGbNdL879LKvJnxLVgI0edqVTzMO"/>
+</div>
+<div class="p-5 flex flex-col gap-2">
+<p class="text-primary text-[10px] font-bold uppercase tracking-widest">Lácteos</p>
+<h3 class="font-bold text-md text-slate-900 dark:text-white leading-tight h-10 line-clamp-2">Crema Ácida Premium</h3>
+<p class="text-slate-400 text-xs">Envase 450ml</p>
+<div class="flex items-center justify-between mt-2">
+<div class="flex flex-col">
+<span class="text-slate-900 dark:text-white font-black text-xl">$35.00</span>
+</div>
+<button class="bg-primary hover:bg-blue-800 text-white p-2.5 rounded-lg transition-all active:scale-90 flex items-center gap-2">
+<span class="material-symbols-outlined text-xl">add_shopping_cart</span>
+<span class="text-xs font-bold pr-1">Agregar</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-12 flex justify-center">
+<nav class="flex items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 hover:bg-slate-50 text-slate-500">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-white font-bold">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 hover:bg-slate-50 font-bold">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 hover:bg-slate-50 font-bold">3</button>
+<span class="px-2 text-slate-400">...</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 hover:bg-slate-50 font-bold">8</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 hover:bg-slate-50 text-slate-500">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</nav>
+</div>
+</div>
+</div>
+</main>
+<section class="py-12 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-20">
+<div class="bg-slate-100 dark:bg-slate-800 rounded-3xl p-8 lg:p-12 flex flex-col lg:flex-row items-center justify-between gap-8 border-l-8 border-primary">
+<div class="max-w-xl text-center lg:text-left">
+<h3 class="text-3xl font-black mb-2">Únete a nuestro boletín semanal</h3>
+<p class="text-slate-600 dark:text-slate-400 text-lg">Suscríbete para recibir descuentos exclusivos en lácteos y las ofertas más frescas directamente en tu bandeja de entrada.</p>
+</div>
+<div class="flex w-full lg:w-auto flex-col sm:flex-row gap-3">
+<input class="px-6 py-4 rounded-xl border-none ring-1 ring-slate-200 dark:ring-slate-700 dark:bg-slate-900 focus:ring-2 focus:ring-primary w-full sm:w-80" placeholder="Tu correo electrónico" type="email"/>
+<button class="bg-primary hover:bg-blue-800 text-white px-8 py-4 rounded-xl font-bold transition-all whitespace-nowrap">Suscribirse ahora</button>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 pt-16 pb-8">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-2">
+<div class="relative flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-secondary" style="font-variation-settings: 'FILL' 1">shopping_cart</span>
+</div>
+<div class="flex flex-col leading-none">
+<h2 class="text-primary dark:text-blue-400 text-2xl font-black leading-none tracking-tighter italic">TREGA</h2>
+<span class="text-secondary text-[10px] font-bold uppercase tracking-widest">Supermercado</span>
+</div>
+</div>
+<p class="text-slate-500 text-sm leading-relaxed">
+                            Tu supermercado digital de confianza. Seleccionamos solo los productos lácteos más frescos y básicos de primera calidad para tu familia.
+                        </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition-colors" href="#"><span class="material-symbols-outlined text-lg">share</span></a>
+<a class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition-colors" href="#"><span class="material-symbols-outlined text-lg">public</span></a>
+<a class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition-colors" href="#"><span class="material-symbols-outlined text-lg">call</span></a>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white mb-6">Enlaces Rápidos</h4>
+<ul class="flex flex-col gap-4 text-slate-500 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Sobre TREGA</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Sucursales</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Rastrear Pedido</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Carreras</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white mb-6">Soporte</h4>
+<ul class="flex flex-col gap-4 text-slate-500 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Centro de Ayuda</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Opciones de Entrega</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Cambios y Devoluciones</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contáctanos</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white mb-6">Aplicaciones</h4>
+<div class="flex flex-col gap-3">
+<button class="bg-black text-white flex items-center gap-3 px-4 py-2 rounded-lg text-left">
+<span class="material-symbols-outlined text-3xl">phone_iphone</span>
+<div>
+<p class="text-[10px] uppercase font-bold opacity-60 leading-none">Descarga en la</p>
+<p class="text-sm font-bold leading-none">App Store</p>
+</div>
+</button>
+<button class="bg-black text-white flex items-center gap-3 px-4 py-2 rounded-lg text-left">
+<span class="material-symbols-outlined text-3xl">ad_units</span>
+<div>
+<p class="text-[10px] uppercase font-bold opacity-60 leading-none">Consíguelo en</p>
+<p class="text-sm font-bold leading-none">Google Play</p>
+</div>
+</button>
+</div>
+</div>
+</div>
+<div class="max-w-[1440px] mx-auto px-6 lg:px-20 mt-16 pt-8 border-t border-slate-100 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-slate-400 text-xs">© 2024 TREGA Supermercado. Todos los derechos reservados.</p>
+<div class="flex gap-6 text-slate-400 text-xs">
+<a class="hover:text-slate-900 transition-colors" href="#">Política de Privacidad</a>
+<a class="hover:text-slate-900 transition-colors" href="#">Términos de Servicio</a>
+</div>
+</div>
+</footer>
+</div>
+</div>
+
+</body></html>
